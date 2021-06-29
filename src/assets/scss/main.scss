@@ -1,0 +1,179 @@
+// color variables
+$clr-white: #fff;
+$clr-primary: #2F527B;
+$clr-primary-2: #6066D0;
+$clr-warning: #F9A826;
+$clr-success: #60BF88;
+$clr-danger: #EA8282;
+$spacing:  1px;
+$transition: .5s ease;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: url("../images/background.png") center/cover no-repeat fixed;
+    position: relative;
+    overflow: hidden;
+}
+.success{
+    background: $clr-success;
+}
+.warning{
+    background: $clr-warning;
+}
+.danger{
+    background: $clr-danger;
+}
+.btn{
+    border: none;
+    color: $clr-white;
+    border-radius: 10px;
+    padding: .8rem 2rem;
+    font-size: 1rem;
+    letter-spacing: $spacing;
+    cursor: pointer;
+    transition: $transition;
+    outline: none;
+    &:hover{
+        background: $clr-primary !important;
+        color: $clr-white !important;
+    }
+}
+main{
+    .quiz-wrapper{
+        width: 75%;
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        h1{
+            color: $clr-white;
+            text-transform: uppercase;
+            letter-spacing: $spacing;
+            line-height: 2;
+        }
+        .quiz-box{
+            background: $clr-white;
+            padding: 1rem;
+            border-radius: 1rem;
+            .flag{
+                img{
+                    width: 100px;
+                }
+            }
+            .question{
+                margin-top: 1.5rem;
+                color: $clr-primary;
+                letter-spacing: $spacing;
+            }
+            .options{
+                margin-top: 1rem;
+                color: $clr-primary-2;
+                .option{
+                    display: grid;
+                    grid-template-columns: 20px 1fr 20px;
+                    margin: 1.2rem 0;
+                    border: 2px solid rgba(96, 102, 208, 0.7);
+                    padding: 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: $transition;
+                    &:hover{
+                        background: $clr-warning;
+                        border: 2px solid rgba(249, 168, 38, 0.7);
+                        .option-type, .answer, span{
+                            color: $clr-white;
+                        }                        
+                    }
+                    span{
+                        display: block;
+                    }
+                    .option-type{
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    .answer{
+                        margin-left: 10px;
+                    }
+                }
+                .success{
+                    border: 2px solid $clr-success;
+                    color: $clr-white;
+                    &:hover{
+                        background: $clr-success;
+                        border: 2px solid $clr-success;
+                    }
+                }
+                .danger{
+                    border: 2px solid $clr-danger;
+                    color: $clr-white;
+                    &:hover{
+                        background: $clr-danger;
+                        border: 2px solid $clr-danger;
+                    }
+                }
+                .warning{
+                    border: 2px solid $clr-warning;
+                    color: $clr-white;
+                }
+                
+
+            }
+        }
+        .btn-next{
+            display: flex;
+            margin-left: auto;
+            order: 2;
+            background: $clr-warning;
+        }
+        .logo{
+            position: fixed;
+            right: -5px;
+            top: 0;
+            img{
+                width: 110px;
+            }
+        }
+       
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $clr-white;
+    text-transform: capitalize;
+}
+@media screen and (min-width: 540px){
+    main{
+        .quiz-wrapper{
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    main{
+        .quiz-wrapper{
+            width: 40%;
+        }
+    }
+}
+@media screen and (min-width: 990px){
+    main{
+        .quiz-wrapper{
+            width: 32%;
+        }
+    }
+}
+@media screen and (min-width: 1200px){
+    main{
+        .quiz-wrapper{
+            width: 25%;
+        }
+    }
+}
